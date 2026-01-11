@@ -11,8 +11,14 @@ import AlgorithmDetail from "./pages/AlgorithmDetail";
 import Syntax from "./pages/Syntax";
 import Complexity from "./pages/Complexity";
 import NotFound from "./pages/NotFound";
+import useScrollToTop from "./hooks/use-scroll-top";
 
 const queryClient = new QueryClient();
+
+const ScrollToTop = () => {
+  useScrollToTop();
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -20,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/algorithms" element={<Algorithms />} />
