@@ -5,6 +5,8 @@ import CodeBlock from "@/components/CodeBlock";
 import { algorithms, categories, getIconComponent } from "@/data/algorithms";
 import { Button } from "@/components/ui/button";
 
+import Footer from "@/components/Footer";
+
 const AlgorithmDetail = () => {
     const { category, id } = useParams();
     const algorithm = algorithms.find(a => a.id === id && a.category === category);
@@ -208,6 +210,7 @@ const AlgorithmDetail = () => {
                     </div>
                 </div>
             </main>
+            <Footer />
         </div>
     );
 };
