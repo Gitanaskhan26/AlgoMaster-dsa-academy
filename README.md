@@ -1,73 +1,181 @@
-# Welcome to your Lovable project
+# 🚀 DSA Master - C++ Algorithm Academy
 
-## Project info
+<div align="center">
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![DSA Master](https://img.shields.io/badge/DSA-Master-blueviolet?style=for-the-badge)
+![Algorithms](https://img.shields.io/badge/Algorithms-67+-brightgreen?style=for-the-badge)
+![Patterns](https://img.shields.io/badge/Patterns-16-orange?style=for-the-badge)
+![C++](https://img.shields.io/badge/C++-17-blue?style=for-the-badge)
 
-## How can I edit this code?
+**A comprehensive, beautifully designed platform for mastering Data Structures, Algorithms, and C++ Syntax**
 
-There are several ways of editing your application.
+[Live Demo](https://c-algorithm-academy.lovable.app) • [Report Bug](https://github.com/Gitanaskhan26/c-algorithm-academy/issues) • [Request Feature](https://github.com/Gitanaskhan26/c-algorithm-academy/issues)
 
-**Use Lovable**
+</div>
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📖 The Story
 
-**Use your preferred IDE**
+> *"I vibe coded this project for revision of DSA & Algorithms with proper C++ Syntax"*
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This project was born out of a simple need — **a one-stop platform to revise everything related to Data Structures and Algorithms** before interviews, exams, or just to keep the concepts fresh.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+As a developer preparing for technical interviews, I found myself jumping between multiple resources — YouTube videos, random GitHub repos, scattered notes, and textbooks. Nothing felt *right*. So I decided to build what I actually needed:
 
-Follow these steps:
+- 🎯 **70+ Algorithms** with clean C++ implementations
+- 📚 **Theory explanations** that actually make sense
+- 👶 **Step-by-step walkthroughs** explained in simple terms (not academic jargon)
+- 🎨 **Beautiful UI** that makes studying enjoyable, not painful
+- ⚡ **Fast and responsive** — no waiting, no friction
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+This isn't just another boring algorithm cheat sheet. It's a **vibe-coded learning platform** built with modern web technologies and a focus on developer experience.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## ✨ Features
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 🧮 Algorithms Section (67+ Algorithms)
+Comprehensive coverage across 5 categories:
+
+| Category | Count | Highlights |
+|----------|-------|------------|
+| **Sorting** | 15 | Bubble, Merge, Quick, Heap, Tim Sort, Radix, and more |
+| **Searching** | 8 | Binary, Jump, Interpolation, Exponential, Fibonacci |
+| **Graph** | 18 | Dijkstra, BFS, DFS, Prim's, Kruskal's, A*, Bellman-Ford |
+| **Dynamic Programming** | 12 | Knapsack, LCS, LIS, Coin Change, Edit Distance |
+| **Operating Systems** | 14 | FCFS, Round Robin, LRU, Banker's Algorithm |
+
+Each algorithm includes:
+- ✅ Clean C++ implementation with syntax highlighting
+- ✅ Detailed theory explanation
+- ✅ Step-by-step walkthrough (ELI5 style)
+- ✅ Time & Space complexity analysis
+
+### 🔥 16 Coding Patterns
+Master the essential patterns that appear in 90% of coding interviews:
+- Sliding Window
+- Two Pointers
+- Fast & Slow Pointers
+- Merge Intervals
+- Binary Search variations
+- Tree BFS/DFS
+- And 10 more...
+
+### 📝 C++ Syntax Guide
+Complete reference for C++ syntax including:
+- STL containers and algorithms
+- Modern C++ features
+- Common idioms and best practices
+
+### 📊 Big O & Complexity
+Visual guide to time and space complexity analysis.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | UI Framework |
+| **TypeScript** | Type Safety |
+| **Vite** | Build Tool & Dev Server |
+| **Tailwind CSS** | Styling |
+| **shadcn/ui** | Component Library |
+| **React Router** | Navigation |
+| **Lucide React** | Icons |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or bun
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Gitanaskhan26/c-algorithm-academy.git
+
+# Navigate to the project directory
+cd c-algorithm-academy
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 📁 Project Structure
 
-This project is built with:
+```
+c-algorithm-academy/
+├── src/
+│   ├── components/     # Reusable UI components
+│   │   ├── CodeBlock.tsx    # Syntax-highlighted code display
+│   │   ├── Navbar.tsx       # Navigation bar
+│   │   └── ui/              # shadcn components
+│   ├── data/
+│   │   ├── algorithms.ts    # 67 algorithms with code & explanations
+│   │   └── patterns.ts      # 16 coding patterns
+│   ├── pages/
+│   │   ├── Index.tsx        # Home page
+│   │   ├── Algorithms.tsx   # Algorithm listing
+│   │   ├── AlgorithmDetail.tsx
+│   │   ├── Patterns.tsx     # Pattern listing
+│   │   ├── PatternDetail.tsx
+│   │   ├── Syntax.tsx       # C++ syntax reference
+│   │   └── Complexity.tsx   # Big O guide
+│   └── App.tsx              # Main app & routing
+├── public/
+└── package.json
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🤝 Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Contributions are welcome! If you'd like to:
+- Add a new algorithm
+- Fix a bug
+- Improve explanations
+- Enhance the UI
 
-## Can I connect a custom domain to my Lovable project?
+Please open an issue first to discuss the change.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📜 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙏 Acknowledgments
+
+- Inspired by the need for better DSA learning resources
+- Built with ❤️ for the developer community
+- Special thanks to everyone preparing for technical interviews — we're all in this together!
+
+---
+
+<div align="center">
+
+**If this project helped you, please consider giving it a ⭐**
+
+Made with 💻 by [Anas Khan](https://github.com/Gitanaskhan26)
+
+</div>
