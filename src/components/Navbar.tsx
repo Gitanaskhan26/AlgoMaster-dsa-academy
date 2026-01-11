@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const navLinks = [
     { path: "/", label: "Home" },
+    { path: "/algorithms", label: "Algorithms" },
     { path: "/patterns", label: "Patterns" },
     { path: "/syntax", label: "C++ Syntax" },
     { path: "/complexity", label: "Big O & Complexity" },
@@ -43,10 +44,13 @@ const Navbar = () => {
             ))}
           </div>
 
+
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" size="sm" className="border-primary/50 text-primary hover:bg-primary/10">
-              GitHub
-            </Button>
+            <a href="https://github.com/Gitanaskhan26/c-algorithm-academy" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" className="border-primary/50 text-primary hover:bg-primary/10">
+                GitHub
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
