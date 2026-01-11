@@ -7,7 +7,7 @@ import {
 import { Algorithm } from "./types";
 import { categories } from "./categories";
 
-export { Algorithm, AlgorithmCategory } from "./types";
+export type { Algorithm, AlgorithmCategory } from "./types";
 export { categories } from "./categories";
 
 
