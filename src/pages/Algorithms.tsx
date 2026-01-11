@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { algorithms, categories, getIconComponent } from "@/data/algorithms";
 import { Search, Clock, HardDrive, ChevronDown, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import Footer from "@/components/Footer";
 
 const Algorithms = () => {
     const [search, setSearch] = useState("");
@@ -144,6 +145,7 @@ const Algorithms = () => {
                     )}
                 </div>
             </main>
+            <Footer />
         </div>
     );
 };
