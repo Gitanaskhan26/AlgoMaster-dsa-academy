@@ -4,34 +4,12 @@ import {
     Repeat, Timer, Box, TreePine, Share2
 } from "lucide-react";
 
-export interface Algorithm {
-    id: string;
-    name: string;
-    category: string;
-    subcategory?: string;
-    description: string;
-    timeComplexity: string;
-    spaceComplexity: string;
-    code: string;
-    theory: string;
-    steps: string[];
-}
+import { Algorithm } from "./types";
+import { categories } from "./categories";
 
-export interface AlgorithmCategory {
-    id: string;
-    name: string;
-    icon: string;
-    description: string;
-    subcategories?: string[];
-}
+export { Algorithm, AlgorithmCategory } from "./types";
+export { categories } from "./categories";
 
-export const categories: AlgorithmCategory[] = [
-    { id: "sorting", name: "Sorting Algorithms", icon: "ArrowUpDown", description: "Algorithms to arrange elements in order" },
-    { id: "searching", name: "Searching Algorithms", icon: "Search", description: "Algorithms to find elements in data structures" },
-    { id: "graph", name: "Graph Algorithms", icon: "GitBranch", description: "Algorithms for graph traversal and optimization" },
-    { id: "dp", name: "Dynamic Programming", icon: "Layers", description: "Optimization using overlapping subproblems" },
-    { id: "os", name: "Operating System Algorithms", icon: "Cpu", description: "CPU scheduling, memory, and disk algorithms", subcategories: ["Process Scheduling", "Memory Management", "Page Replacement", "Disk Scheduling", "Synchronization"] }
-];
 
 export const algorithms: Algorithm[] = [
     // ============ SORTING ALGORITHMS ============
