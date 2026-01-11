@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Patterns from "./pages/Patterns";
 import PatternDetail from "./pages/PatternDetail";
+import Algorithms from "./pages/Algorithms";
+import AlgorithmDetail from "./pages/AlgorithmDetail";
 import Syntax from "./pages/Syntax";
 import Complexity from "./pages/Complexity";
 import NotFound from "./pages/NotFound";
@@ -20,6 +22,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/algorithms" element={<Algorithms />} />
+          <Route path="/algorithms/:category/:id" element={<AlgorithmDetail />} />
           <Route path="/patterns" element={<Patterns />} />
           <Route path="/patterns/:id" element={<PatternDetail />} />
           <Route path="/syntax" element={<Syntax />} />
