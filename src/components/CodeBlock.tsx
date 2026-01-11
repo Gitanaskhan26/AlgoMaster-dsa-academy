@@ -17,13 +17,47 @@ const CodeBlock = ({ code, language = "cpp", title }: CodeBlockProps) => {
   };
 
   // Simple syntax highlighting for C++
+  // Uses placeholder tokens to prevent regex from corrupting already-highlighted HTML
   const highlightCode = (code: string) => {
-    return code
-      .replace(/(\/\/.*$)/gm, '<span class="code-comment">$1</span>')
-      .replace(/\b(int|void|return|for|while|if|else|class|struct|template|typename|const|auto|bool|char|double|float|long|short|unsigned|signed|static|virtual|override|public|private|protected|namespace|using|new|delete|nullptr|true|false|this)\b/g, '<span class="code-keyword">$1</span>')
-      .replace(/\b(\d+)\b/g, '<span class="code-number">$1</span>')
-      .replace(/"([^"]*)"/g, '<span class="code-string">"$1"</span>')
-      .replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\(/g, '<span class="code-function">$1</span>(');
+    const placeholders: string[] = [];
+    let result = code;
+
+    // Helper to replace with placeholder - uses alphabetic markers to avoid conflicts with number regex
+    const protect = (html: string): string => {
+      const index = placeholders.length;
+      placeholders.push(html);
+      return `\x00PH_${index}_HP\x00`;
+    };
+
+    // 1. Highlight strings first (highest priority, prevents keyword matching inside strings)
+    result = result.replace(/"([^"]*)"/g, (match, content) =>
+      protect(`<span class="code-string">"${content}"</span>`)
+    );
+
+    // 2. Highlight comments (prevents keyword matching inside comments)
+    result = result.replace(/(\/\/.*$)/gm, (match) =>
+      protect(`<span class="code-comment">${match}</span>`)
+    );
+
+    // 3. Highlight keywords
+    result = result.replace(/\b(int|void|return|for|while|if|else|class|struct|template|typename|const|auto|bool|char|double|float|long|short|unsigned|signed|static|virtual|override|public|private|protected|namespace|using|new|delete|nullptr|true|false|this)\b/g, (match) =>
+      protect(`<span class="code-keyword">${match}</span>`)
+    );
+
+    // 4. Highlight numbers
+    result = result.replace(/\b(\d+)\b/g, (match) =>
+      protect(`<span class="code-number">${match}</span>`)
+    );
+
+    // 5. Highlight function calls
+    result = result.replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\(/g, (match, funcName) =>
+      protect(`<span class="code-function">${funcName}</span>`) + '('
+    );
+
+    // Restore all placeholders - matches the PH_{index}_HP format
+    result = result.replace(/\x00PH_(\d+)_HP\x00/g, (_, index) => placeholders[parseInt(index)]);
+
+    return result;
   };
 
   return (
