@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Patterns from "./pages/Patterns";
 import PatternDetail from "./pages/PatternDetail";
+import Syntax from "./pages/Syntax";
 import Complexity from "./pages/Complexity";
 import NotFound from "./pages/NotFound";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/patterns" element={<Patterns />} />
           <Route path="/patterns/:id" element={<PatternDetail />} />
+          <Route path="/syntax" element={<Syntax />} />
           <Route path="/complexity" element={<Complexity />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

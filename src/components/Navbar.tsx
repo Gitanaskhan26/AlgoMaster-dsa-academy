@@ -10,6 +10,7 @@ const Navbar = () => {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/patterns", label: "Patterns" },
+    { path: "/syntax", label: "C++ Syntax" },
     { path: "/complexity", label: "Big O & Complexity" },
   ];
 
